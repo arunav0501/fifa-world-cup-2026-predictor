@@ -7,10 +7,22 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      '/predict-match': 'http://127.0.0.1:8000',
-      '/simulate-match': 'http://127.0.0.1:8000',
-      '/simulate-world-cup': 'http://127.0.0.1:8000',
-      '/champion-probabilites': 'http://127.0.0.1:8000'
+      '/predict-match': {
+        target: 'https://worldcup-backend-8888.onrender.com',
+        changeOrigin: true
+      },
+      '/simulate-match': {
+        target: 'https://worldcup-backend-8888.onrender.com',
+        changeOrigin: true
+      },
+      '/simulate-world-cup': {
+        target: 'https://worldcup-backend-8888.onrender.com',
+        changeOrigin: true
+      },
+      '/champion-probabilites': {
+        target: 'https://worldcup-backend-8888.onrender.com',
+        changeOrigin: true
+      }
     }
   }
 })
