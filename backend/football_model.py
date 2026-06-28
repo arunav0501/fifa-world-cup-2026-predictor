@@ -2,13 +2,17 @@ import pandas as pd
 import pickle 
 import numpy as np
 
-with open("team_stats.pkl","rb") as f:
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+with open(BASE_DIR /"team_stats.pkl","rb") as f:
     team_stats = pickle.load(f)
 
-with open("worldcup_xgb.pkl","rb") as f:
+with open(BASE_DIR /"worldcup_xgb.pkl","rb") as f:
     xgb = pickle.load(f)
 
-with open("features.pkl","rb") as f:
+with open(BASE_DIR /"features.pkl","rb") as f:
     features = pickle.load(f)
 
 def create_match_features(home_team,away_team):

@@ -4,7 +4,13 @@ import pickle
 from tournament_models import generate_group_fixtures,initialize_group,update_standings
 from football_model import simulate_match,simulate_knockout
 
-df = pd.read_csv("/home/arunaviyer/Desktop/worldcup_predictor/data/draws.csv")
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+DATA_DIR = PROJECT_ROOT / "data"
+
+df = pd.read_csv(DATA_DIR / "draws.csv")
 
 # Convert the DataFrame to the desired dictionary format
 groups = {col.split()[-1]: df[col].tolist() for col in df.columns}
