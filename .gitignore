@@ -1,22 +1,25 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*.so
 
-# Virtual environments
+# Virtual Environment
 venv/
 .env
 
 # Jupyter
 .ipynb_checkpoints/
 
+# VS Code
+.vscode/
+
 # Node
 frontend/node_modules/
 frontend/dist/
 
-# VS Code
-.vscode/
+# Build
+build/
+dist/
 
 # OS
 .DS_Store
