@@ -17,7 +17,16 @@ app = FastAPI(
     description="Machine Learning based FIFA World Cup 2026 Prediction API",
     version="1.0"
 )
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://fifa-world-cup-2026-predictor-iota.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 class MatchRequest(BaseModel):
     home_team : str
     away_team : str
