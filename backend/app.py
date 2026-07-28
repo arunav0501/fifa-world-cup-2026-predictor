@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from football_model import (
@@ -68,17 +69,17 @@ def simulate_world_cup_api():
     result = simulate_world_cup()
     return result
 
-@app.post("/champion-probabilites")
+@app.post("/champion-probabilities")
 def champion_probabilities(request: MonteCarloRequest):
     results = simulate_many(request.simulations)
 
     total = request.simulations
 
-    probabilites = {}
+    probabilities = {}
 
     for team,wins in results.items():
-        probabilites[team] = round(wins/total * 100,2)
+        probabilities[team] = round(wins/total * 100,2)
 
     
-    return probabilites
+    return probabilities
 

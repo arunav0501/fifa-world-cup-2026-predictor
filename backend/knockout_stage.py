@@ -3,7 +3,7 @@ from group_stage import (
     extract_qualifiers,
     rank_third_place
 )
-from football_model import simulate_knockout
+from fast_simulation import fast_simulate_knockout as simulate_knockout
 from collections import Counter
 
 
@@ -151,5 +151,5 @@ def simulate_many(n=100):
 if __name__=="__main__":
     results = simulate_many(100)
     for team,wins in results.most_common():
-        print(team,wins/1000)
+        print(team,wins/100)
 

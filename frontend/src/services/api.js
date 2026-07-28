@@ -28,8 +28,7 @@ export const simulateWorldCup = async () => {
 };
 
 export const championProbabilities = async (simulations = 100) => {
-  // NOTE: The endpoint name has a typo in the backend: /champion-probabilites
-  const response = await api.post('/champion-probabilites', { simulations });
+  const response = await api.post('/champion-probabilities', { simulations });
   return response.data;
 };
 

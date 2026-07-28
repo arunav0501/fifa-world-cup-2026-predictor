@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle 
 from tournament_models import generate_group_fixtures,initialize_group,update_standings
-from football_model import simulate_match,simulate_knockout
+from fast_simulation import fast_simulate_match as simulate_match
 
 from pathlib import Path
 

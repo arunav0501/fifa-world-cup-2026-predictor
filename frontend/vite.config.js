@@ -8,19 +8,19 @@ export default defineConfig({
   server: {
     proxy: {
       '/predict-match': {
-        target: 'https://worldcup-backend-8888.onrender.com',
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true
       },
       '/simulate-match': {
-        target: 'https://worldcup-backend-8888.onrender.com',
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true
       },
       '/simulate-world-cup': {
-        target: 'https://worldcup-backend-8888.onrender.com',
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true
       },
-      '/champion-probabilites': {
-        target: 'https://worldcup-backend-8888.onrender.com',
+      '/champion-probabilities': {
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true
       }
     }
